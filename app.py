@@ -7,6 +7,52 @@ from docx import Document
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
+
+st.markdown("""
+<style>
+@keyframes softRise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.stApp {
+  background: linear-gradient(135deg, #f6f8ff 0%, #ffffff 55%, #f3f6ff 100%);
+}
+h1 {
+  color: #20345f !important;
+  animation: softRise 650ms ease-out both;
+}
+[data-testid="stMarkdownContainer"] {
+  animation: softRise 450ms ease-out both;
+}
+[data-testid="stTextInput"] input {
+  border-radius: 14px;
+  border: 1px solid #d8e0f2;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+[data-testid="stTextInput"] input:focus {
+  border-color: #7186e8;
+  box-shadow: 0 0 0 3px rgba(113, 134, 232, 0.18);
+}
+.stButton > button {
+  border-radius: 12px;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.stButton > button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(47, 70, 130, 0.15);
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+""", unsafe_allow_html=True)
+
+
+
 st.title("My RAG Chatbot")
 st.write("Ask a question about your notes. Answers are grounded in the retrieved passages and kept focused on what you asked.")
 
