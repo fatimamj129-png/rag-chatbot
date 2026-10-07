@@ -43,9 +43,6 @@ st.markdown("""
   <div class="phase-card"><span class="phase-number">2</span><span class="phase-copy"><strong>Augment</strong><small>Focus the prompt</small></span></div>
   <div class="phase-card"><span class="phase-number">3</span><span class="phase-copy"><strong>Generate</strong><small>Answer from your notes</small></span></div>
 </div>
-  <div class="phase-card"><span class="phase-number">02</span><span class="phase-copy"><strong>Augment</strong><small>Build a focused prompt</small></span></div>
-  <div class="phase-card"><span class="phase-number">03</span><span class="phase-copy"><strong>Generate</strong><small>Answer from your notes</small></span></div>
-</div>
 """, unsafe_allow_html=True)
 
 @st.cache_data
