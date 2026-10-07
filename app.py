@@ -28,9 +28,9 @@ st.markdown("""
 [data-testid="stForm"] [data-testid="stFormSubmitButton"] button { min-height: 48px; width: 48px; padding: 0; border: 0; border-radius: 15px; background: #4536d2; color: white; font-size: 23px; }
 [data-testid="stForm"] [data-testid="stFormSubmitButton"] button:hover { background: #392bc5; color: white; }
 @media (max-width: 640px) {
-  .block-container { padding: calc(50vh - 150px) 16px 20px; }
-  .hero-title { font-size: 36px; }
-  .hero-description { font-size: 16px; }
+  .block-container { padding: calc(50vh - 173px) 16px 20px; }
+  .hero-title { font-size: 32px !important; white-space: nowrap; }
+  .hero-description { font-size: 16px !important; }
 }
 </style>
 """, unsafe_allow_html=True)
