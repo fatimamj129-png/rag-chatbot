@@ -16,16 +16,10 @@ st.markdown("""
 .hero-kicker { color: #52627a; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .hero-card h1 { margin: .55rem 0 .35rem; color: #17263d !important; font-size: clamp(1.8rem, 4vw, 2.35rem); line-height: 1.2; letter-spacing: -.025em; }
 .hero-copy { max-width: 640px; margin: 0; color: #5c687a; font-size: .98rem; line-height: 1.6; }
-.pipeline-title { margin: 1.4rem 0 .65rem; color: #52627a; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-.pipeline { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .7rem; margin: 0 0 1.3rem; }
-.phase-card { display: flex; align-items: center; gap: .65rem; min-height: 64px; padding: .7rem .85rem; border: 1px solid #e4e8ef; border-radius: 12px; background: #fff; }
-.phase-number { display: grid; flex: 0 0 1.85rem; height: 1.85rem; place-items: center; border-radius: 9px; color: #fff; background: #345b8c; font-size: .72rem; font-weight: 700; }
-.phase-copy strong { display: block; color: #24354c; font-size: .88rem; }
-.phase-copy small { display: block; margin-top: .1rem; color: #697789; font-size: .73rem; }
 [data-testid="stTextInput"] { margin-top: .35rem; }
 [data-testid="stTextInput"] input { border: 1px solid #d5dce6; border-radius: 10px; background: #fff; }
 [data-testid="stTextInput"] input:focus { border-color: #5579a7; box-shadow: 0 0 0 3px rgba(85,121,167,.14); }
-@media (max-width: 640px) { .block-container { padding: 1.25rem 1rem 2rem; } .hero-card { padding: 1.35rem; } .pipeline { grid-template-columns: 1fr; gap: .5rem; } .phase-card { min-height: 56px; } }
+@media (max-width: 640px) { .block-container { padding: 1.25rem 1rem 2rem; } .hero-card { padding: 1.35rem; } }
 </style>
 """, unsafe_allow_html=True)
 
@@ -36,12 +30,6 @@ st.markdown("""
   <div class="hero-kicker">RAG · STUDY ASSISTANT</div>
   <h1>Study your course notes</h1>
   <p class="hero-copy">Ask a question and get a focused answer grounded in your uploaded documents.</p>
-</div>
-<div class="pipeline-title">How it works</div>
-<div class="pipeline">
-  <div class="phase-card"><span class="phase-number">1</span><span class="phase-copy"><strong>Retrieve</strong><small>Find relevant passages</small></span></div>
-  <div class="phase-card"><span class="phase-number">2</span><span class="phase-copy"><strong>Augment</strong><small>Focus the prompt</small></span></div>
-  <div class="phase-card"><span class="phase-number">3</span><span class="phase-copy"><strong>Generate</strong><small>Answer from your notes</small></span></div>
 </div>
 """, unsafe_allow_html=True)
 
