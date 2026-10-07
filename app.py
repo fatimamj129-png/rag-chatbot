@@ -14,12 +14,45 @@ st.markdown("""
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+@keyframes gradientDrift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes pulseDot {
+  0% { box-shadow: 0 0 0 0 rgba(56, 189, 142, 0.55); }
+  70% { box-shadow: 0 0 0 9px rgba(56, 189, 142, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(56, 189, 142, 0); }
+}
 .stApp {
-  background: linear-gradient(135deg, #f6f8ff 0%, #ffffff 55%, #f3f6ff 100%);
+  background: linear-gradient(120deg, #dceaff, #f0e5ff, #e0f7ef, #dceaff);
+  background-size: 300% 300%;
+  animation: gradientDrift 14s ease infinite;
 }
 h1 {
   color: #20345f !important;
   animation: softRise 650ms ease-out both;
+}
+.ready-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0.35rem 0 1rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid rgba(96, 116, 190, 0.18);
+  border-radius: 999px;
+  background: linear-gradient(90deg, #edf2ff, #f7edff);
+  color: #344675;
+  font-size: 0.9rem;
+  font-weight: 600;
+  animation: softRise 700ms ease-out both;
+}
+.ready-dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: #38bd8e;
+  animation: pulseDot 1.8s ease-out infinite;
 }
 [data-testid="stMarkdownContainer"] {
   animation: softRise 450ms ease-out both;
@@ -47,6 +80,8 @@ h1 {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+  .stApp { animation: none !important; }
+  .ready-dot { animation: none !important; }
 }
 </style>
 """, unsafe_allow_html=True)
@@ -54,6 +89,10 @@ h1 {
 
 
 st.title("My RAG Chatbot")
+st.markdown(
+    '<div class="ready-badge"><span class="ready-dot"></span>Ready to answer from your notes</div>',
+    unsafe_allow_html=True,
+)
 st.write("Ask a question about your notes. Answers are grounded in the retrieved passages and kept focused on what you asked.")
 
 @st.cache_data
