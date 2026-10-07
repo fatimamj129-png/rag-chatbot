@@ -91,6 +91,20 @@ if question:
             )
             model = os.getenv("OLLAMA_MODEL", "llama3.2:1b")
             st.caption(f"Generating with Ollama locally ({model})")
+        elif provider == "groq":
+            try:
+                api_key = st.secrets.get("GROQ_API_KEY", "")
+            except Exception:
+                api_key = os.getenv("GROQ_API_KEY", "")
+            if not api_key:
+                st.error("Groq API key is not configured. Add GROQ_API_KEY to Streamlit Secrets to use Groq.")
+                st.stop()
+            client = OpenAI(
+                base_url="https://api.groq.com/openai/v1",
+                api_key=api_key,
+            )
+            model = os.getenv("GROQ_MODEL", "openai/gpt-oss-20b")
+            st.caption(f"Generating with Groq ({model})")
         elif provider == "openai":
             try:
                 api_key = st.secrets.get("OPENAI_API_KEY", "")
@@ -103,7 +117,7 @@ if question:
             model = "gpt-4o-mini"
             st.caption("Generating with OpenAI")
         else:
-            st.error("Unknown LLM_PROVIDER. Set it to 'ollama' or 'openai'.")
+            st.error("Unknown LLM_PROVIDER. Set it to 'ollama', 'groq', or 'openai'.")
             st.stop()
 
         try:
