@@ -48,7 +48,10 @@ if not chunks:
 question = st.text_input("Ask your question")
 
 if question.strip():
-    with st.spinner("Searching your documents..."):
+    answer_placeholder = st.empty()
+    answer_placeholder.markdown("⏳ **Generating answer...**")
+
+    with st.spinner("Generating answer..."):
             vectorizer = TfidfVectorizer()
             document_vectors = vectorizer.fit_transform([chunk["text"] for chunk in chunks])
             question_vector = vectorizer.transform([question])
@@ -138,6 +141,7 @@ if question.strip():
                 except Exception as error:
                     answer = f"Could not generate an answer: {error}"
                     sources = []
-    st.markdown(answer)
-    if sources:
-        st.caption("Sources: " + "; ".join(sources))
+    with answer_placeholder.container():
+        st.markdown(answer)
+        if sources:
+            st.caption("Sources: " + "; ".join(sources))
