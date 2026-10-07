@@ -13,12 +13,17 @@ st.set_page_config(page_title="RAG AI Chatbot", layout="centered")
 st.markdown("""
 <style>
 .stApp { background: #f4f5fb; }
+[data-testid="stHeader"] { background: transparent; }
+[data-testid="stToolbar"] { visibility: hidden; }
 .block-container { max-width: 760px; padding: calc(50vh - 160px) 24px 24px; }
 .hero-icon { width: 64px; height: 64px; margin: 0 auto 22px; border-radius: 17px; background: #4536d2; display: flex; align-items: center; justify-content: center; }
 .hero-title { margin: 0 0 12px; color: #191c34; font-size: 46px; line-height: 1.15; font-weight: 700; text-align: center; letter-spacing: -.03em; }
-.hero-description { max-width: 540px; margin: 0 auto; color: #5c637d; font-size: 18px; line-height: 1.5; text-align: center; }
+.hero-description { max-width: 520px; margin: 0 auto; color: #5c637d; font-size: 18px; line-height: 1.5; text-align: center; }
 [data-testid="stForm"] { margin-top: 40px; padding: 8px; border: 1px solid #d4d9eb; border-radius: 20px; background: #fff; box-shadow: 0 10px 28px rgba(24, 31, 65, .08); }
+[data-testid="stForm"] [data-testid="stHorizontalBlock"] { flex-wrap: nowrap !important; }
+[data-testid="stForm"] [data-testid="stColumn"] { min-width: 0 !important; }
 [data-testid="stForm"] [data-testid="stTextInput"] { margin: 0; }
+[data-testid="stForm"] [data-testid="stTextInputRootElement"] { border: 0 !important; box-shadow: none !important; background: transparent !important; }
 [data-testid="stForm"] [data-testid="stTextInput"] input { height: 48px; border: 0; box-shadow: none; background: transparent; padding-left: 18px; font-size: 16px; color: #252941; }
 [data-testid="stForm"] [data-testid="stFormSubmitButton"] button { min-height: 48px; width: 48px; padding: 0; border: 0; border-radius: 15px; background: #4536d2; color: white; font-size: 23px; }
 [data-testid="stForm"] [data-testid="stFormSubmitButton"] button:hover { background: #392bc5; color: white; }
@@ -78,7 +83,7 @@ if "messages" not in st.session_state:
 
 messages_area = st.container()
 with st.form("question_form", clear_on_submit=True, border=False):
-    question_col, send_col = st.columns([0.92, 0.08], gap="small")
+    question_col, send_col = st.columns([1, 0.2], gap="small")
     with question_col:
         question = st.text_input("Ask your question", placeholder="Ask your question", label_visibility="collapsed")
     with send_col:
