@@ -15,11 +15,11 @@ st.markdown("""
 .stApp { background: #f4f5fb; }
 [data-testid="stHeader"] { background: transparent; }
 [data-testid="stToolbar"] { visibility: hidden; }
-.block-container { max-width: 760px; padding: calc(50vh - 160px) 24px 24px; }
-.hero-icon { width: 64px; height: 64px; margin: 0 auto 22px; border-radius: 17px; background: #4536d2; display: flex; align-items: center; justify-content: center; }
-.hero-title { margin: 0 0 12px; color: #191c34; font-size: 46px; line-height: 1.15; font-weight: 700; text-align: center; letter-spacing: -.03em; }
-.hero-description { max-width: 520px; margin: 0 auto; color: #5c637d; font-size: 18px; line-height: 1.5; text-align: center; }
-[data-testid="stForm"] { margin-top: 40px; padding: 8px; border: 1px solid #d4d9eb; border-radius: 20px; background: #fff; box-shadow: 0 10px 28px rgba(24, 31, 65, .08); }
+.block-container { max-width: 760px; padding: calc(50vh - 175px) 24px 24px; }
+.hero-icon { width: 64px; height: 64px; margin: 0 auto 14px; border-radius: 17px; background: #4536d2; display: flex; align-items: center; justify-content: center; }
+.hero-title { margin: 0 0 7px; color: #191c34; font-size: 46px !important; line-height: 1.15; font-weight: 700; text-align: center; letter-spacing: -.03em; }
+.hero-description { max-width: 520px; margin: 0 auto; color: #5c637d; font-size: 18px !important; line-height: 1.5; text-align: center; }
+[data-testid="stForm"] { margin-top: 64px; padding: 9px; border: 1px solid #d4d9eb; border-radius: 20px; background: #fff; box-shadow: 0 10px 28px rgba(24, 31, 65, .08); }
 [data-testid="stForm"] [data-testid="stHorizontalBlock"] { flex-wrap: nowrap !important; }
 [data-testid="stForm"] [data-testid="stColumn"] { min-width: 0 !important; }
 [data-testid="stForm"] [data-testid="stTextInput"] { margin: 0; }
