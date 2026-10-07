@@ -13,6 +13,11 @@ st.markdown("""
 @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes softShift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 .stApp { background: linear-gradient(120deg, #f5f7fa, #f1f5fb, #f7f5fb, #f5f7fa); background-size: 240% 240%; animation: softShift 24s ease-in-out infinite; }
+@keyframes ambientFloat { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(18px, -16px, 0); } }
+.stApp::before, .stApp::after { content: ""; position: fixed; z-index: 0; width: 250px; height: 250px; border-radius: 50%; filter: blur(42px); opacity: .24; pointer-events: none; animation: ambientFloat 18s ease-in-out infinite; }
+.stApp::before { top: 8%; right: -95px; background: radial-gradient(circle, #9bbcff 0%, rgba(155,188,255,0) 70%); }
+.stApp::after { bottom: 4%; left: -105px; background: radial-gradient(circle, #c9a8f4 0%, rgba(201,168,244,0) 70%); animation-delay: -9s; }
+.main .block-container { position: relative; z-index: 1; }
 .block-container { max-width: 860px; padding-top: 2rem; padding-bottom: 3rem; }
 .hero-card { padding: 1.7rem 2rem; border: 1px solid #e4e8ef; border-radius: 16px; background: rgba(255,255,255,.94); box-shadow: 0 4px 18px rgba(20, 35, 60, .05); animation: fadeUp 650ms ease-out both; }
 .hero-kicker { animation: fadeUp 700ms ease-out both; color: #52627a; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
