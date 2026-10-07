@@ -12,13 +12,7 @@ st.set_page_config(page_title="RAG AI Chatbot", page_icon="💬", layout="center
 
 st.markdown("""
 <style>
-.block-container {
-    max-width: 760px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+.block-container { max-width: 760px; padding-top: 35vh; }
 .chat-title, .chat-description { text-align: center; }
 </style>
 """, unsafe_allow_html=True)
