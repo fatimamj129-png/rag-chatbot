@@ -1,4 +1,5 @@
 import os
+import time
 from pathlib import Path
 
 import streamlit as st
@@ -49,7 +50,8 @@ question = st.text_input("Ask your question")
 
 if question.strip():
     answer_placeholder = st.empty()
-    answer_placeholder.markdown("⏳ **Generating answer...**")
+    answer_placeholder.caption("Generating answer...")
+    generation_started = time.perf_counter()
 
     with st.spinner("Generating answer..."):
             vectorizer = TfidfVectorizer()
@@ -141,6 +143,11 @@ if question.strip():
                 except Exception as error:
                     answer = f"Could not generate an answer: {error}"
                     sources = []
+
+            remaining_indicator_time = 0.6 - (time.perf_counter() - generation_started)
+            if remaining_indicator_time > 0:
+                time.sleep(remaining_indicator_time)
+
     with answer_placeholder.container():
         st.markdown(answer)
         if sources:
