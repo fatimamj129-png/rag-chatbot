@@ -10,15 +10,18 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 st.markdown("""
 <style>
-.stApp { background: #f5f7fa; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes softShift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+.stApp { background: linear-gradient(120deg, #f5f7fa, #f1f5fb, #f7f5fb, #f5f7fa); background-size: 240% 240%; animation: softShift 24s ease-in-out infinite; }
 .block-container { max-width: 860px; padding-top: 2rem; padding-bottom: 3rem; }
-.hero-card { padding: 1.7rem 2rem; border: 1px solid #e4e8ef; border-radius: 16px; background: #ffffff; box-shadow: 0 4px 18px rgba(20, 35, 60, .05); }
-.hero-kicker { color: #52627a; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-.hero-card h1 { margin: .55rem 0 .35rem; color: #17263d !important; font-size: clamp(1.8rem, 4vw, 2.35rem); line-height: 1.2; letter-spacing: -.025em; }
-.hero-copy { max-width: 640px; margin: 0; color: #5c687a; font-size: .98rem; line-height: 1.6; }
+.hero-card { padding: 1.7rem 2rem; border: 1px solid #e4e8ef; border-radius: 16px; background: rgba(255,255,255,.94); box-shadow: 0 4px 18px rgba(20, 35, 60, .05); animation: fadeUp 650ms ease-out both; }
+.hero-kicker { animation: fadeUp 700ms ease-out both; color: #52627a; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.hero-card h1 { animation: fadeUp 750ms ease-out both; margin: .55rem 0 .35rem; color: #17263d !important; font-size: clamp(1.8rem, 4vw, 2.35rem); line-height: 1.2; letter-spacing: -.025em; }
+.hero-copy { animation: fadeUp 850ms ease-out both; max-width: 640px; margin: 0; color: #5c687a; font-size: .98rem; line-height: 1.6; }
 [data-testid="stTextInput"] { margin-top: .35rem; }
-[data-testid="stTextInput"] input { border: 1px solid #d5dce6; border-radius: 10px; background: #fff; }
-[data-testid="stTextInput"] input:focus { border-color: #5579a7; box-shadow: 0 0 0 3px rgba(85,121,167,.14); }
+[data-testid="stTextInput"] input { border: 1px solid #d5dce6; border-radius: 10px; background: rgba(255,255,255,.96); transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease; }
+[data-testid="stTextInput"] input:focus { border-color: #5579a7; box-shadow: 0 0 0 3px rgba(85,121,167,.14); transform: translateY(-1px); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } .stApp { animation: none !important; } }
 @media (max-width: 640px) { .block-container { padding: 1.25rem 1rem 2rem; } .hero-card { padding: 1.35rem; } }
 </style>
 """, unsafe_allow_html=True)
@@ -27,9 +30,9 @@ st.markdown("""
 
 st.markdown("""
 <div class="hero-card">
-  <div class="hero-kicker">RAG · STUDY ASSISTANT</div>
-  <h1>Study your course notes</h1>
-  <p class="hero-copy">Ask a question and get a focused answer grounded in your uploaded documents.</p>
+  <div class="hero-kicker">RAG · AI CHATBOT</div>
+  <h1>RAG AI Chatbot</h1>
+  <p class="hero-copy">Ask a question and get a focused answer grounded in your documents.</p>
 </div>
 """, unsafe_allow_html=True)
 
