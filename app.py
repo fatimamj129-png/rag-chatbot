@@ -19,10 +19,8 @@ st.markdown("""
 .hero-card h1 { animation: fadeUp 750ms ease-out both; margin: .55rem 0 .35rem; color: #17263d !important; font-size: clamp(1.8rem, 4vw, 2.35rem); line-height: 1.2; letter-spacing: -.025em; }
 .hero-copy { animation: fadeUp 850ms ease-out both; max-width: 640px; margin: 0; color: #5c687a; font-size: .98rem; line-height: 1.6; }
 [data-testid="stTextInput"] { margin-top: .35rem; }
-[data-testid="stTextInput"] div[data-baseweb="input"] { border: 1px solid #d5dce6 !important; border-radius: 12px !important; background: rgba(255,255,255,.98) !important; box-shadow: 0 2px 8px rgba(28,45,76,.04) !important; transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease, background 180ms ease !important; }
-[data-testid="stTextInput"] div[data-baseweb="input"]:hover { border-color: #7a9be0 !important; background: #fff !important; box-shadow: 0 0 0 4px rgba(96,139,226,.13), 0 8px 20px rgba(54,86,145,.12) !important; transform: translateY(-1px); }
-[data-testid="stTextInput"] div[data-baseweb="input"]:focus-within { border-color: #6488d3 !important; background: #fff !important; box-shadow: 0 0 0 4px rgba(96,139,226,.20), 0 7px 18px rgba(54,86,145,.12) !important; outline: none !important; }
-[data-testid="stTextInput"] input, [data-testid="stTextInput"] input:focus, [data-testid="stTextInput"] input:focus-visible { border: 0 !important; outline: none !important; box-shadow: none !important; background: transparent !important; }
+[data-testid="stTextInput"] input { border: 1px solid #d5dce6; border-radius: 10px; background: rgba(255,255,255,.96); transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease; }
+[data-testid="stTextInput"] input:focus { border-color: #5579a7; box-shadow: 0 0 0 3px rgba(85,121,167,.14); transform: translateY(-1px); }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } .stApp { animation: none !important; background-size: 100% 100%; } }
 @media (max-width: 640px) { .block-container { padding: 1.25rem 1rem 2rem; } .hero-card { padding: 1.35rem; } }
 </style>
